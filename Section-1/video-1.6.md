@@ -13,8 +13,8 @@ $ kubectl describe pod <POD_NAME>
 
 $ kubectl apply -f kubernetes/nginx-app-istio-gateway.yaml -n istio-demo
 $ kubectl apply -f kubernetes/nginx-app-istio-virtual-service.yaml -n istio-demo
-
 $ kubectl get svc istio-ingressgateway -n istio-system
+$ curl -s -I -HHost:nginx-app.demo "http://$INGRESS_HOST:$INGRESS_PORT/"
 $ curl -H "Host: nginx-app.demo" <EXTERNAL-IP>
 
 ```
